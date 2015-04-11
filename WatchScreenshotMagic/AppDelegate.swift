@@ -43,7 +43,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     self.messageLabel.hidden = false
                     self.saveButton.enabled = false
                     self.messageLabel.textColor = NSColor.redColor()
-                    self.messageLabel.stringValue = "Screenshot must be 312x390 (48mm)"
+                    self.messageLabel.stringValue = "Screenshot must be 312x390 (42mm)"
                 }
             } else {
                 self.userScreenshot = nil
