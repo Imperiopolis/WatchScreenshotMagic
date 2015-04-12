@@ -6,6 +6,8 @@ Drag and drop a screenshot from the 42mm simulator (⌘S) and choose the correct
 
 <img src="screenshot.png" alt="Screenshot" width=450>
 
+__Note:__ This project uses Swift 1.2. In order to compile you must use Xcode 6.3 or newer. 
+
 ## Watch App
 
 * Removes charging indicator from status bar
