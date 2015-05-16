@@ -17,7 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2D38BA6E1AD8144700113F96 /* WatchScreenshotMagic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchScreenshotMagic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2D38BA6E1AD8144700113F96 /* Watch Screenshot Magic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Watch Screenshot Magic.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D38BAB01AD8A78E00113F96 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2D4A7F7A1AD8DE2000AE5445 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = WatchScreenshotMagic/AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		2D4A7F7B1AD8DE2000AE5445 /* DropImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DropImageView.swift; path = WatchScreenshotMagic/DropImageView.swift; sourceTree = SOURCE_ROOT; };
@@ -51,7 +51,7 @@
 		2D38BA6F1AD8144700113F96 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2D38BA6E1AD8144700113F96 /* WatchScreenshotMagic.app */,
+				2D38BA6E1AD8144700113F96 /* Watch Screenshot Magic.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -81,9 +81,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2D38BA6D1AD8144700113F96 /* WatchScreenshotMagic */ = {
+		2D38BA6D1AD8144700113F96 /* Watch Screenshot Magic */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2D38BA881AD8144700113F96 /* Build configuration list for PBXNativeTarget "WatchScreenshotMagic" */;
+			buildConfigurationList = 2D38BA881AD8144700113F96 /* Build configuration list for PBXNativeTarget "Watch Screenshot Magic" */;
 			buildPhases = (
 				2D38BA6A1AD8144700113F96 /* Sources */,
 				2D38BA6B1AD8144700113F96 /* Frameworks */,
@@ -93,9 +93,9 @@
 			);
 			dependencies = (
 			);
-			name = WatchScreenshotMagic;
+			name = "Watch Screenshot Magic";
 			productName = WatchScreenshotGenerator;
-			productReference = 2D38BA6E1AD8144700113F96 /* WatchScreenshotMagic.app */;
+			productReference = 2D38BA6E1AD8144700113F96 /* Watch Screenshot Magic.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -125,7 +125,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2D38BA6D1AD8144700113F96 /* WatchScreenshotMagic */,
+				2D38BA6D1AD8144700113F96 /* Watch Screenshot Magic */,
 			);
 		};
 /* End PBXProject section */
@@ -256,7 +256,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = WatchScreenshotMagic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = WatchScreenshotMagic;
+				PRODUCT_NAME = "Watch Screenshot Magic";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -269,7 +269,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = WatchScreenshotMagic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = WatchScreenshotMagic;
+				PRODUCT_NAME = "Watch Screenshot Magic";
 			};
 			name = Release;
 		};
@@ -285,7 +285,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D38BA881AD8144700113F96 /* Build configuration list for PBXNativeTarget "WatchScreenshotMagic" */ = {
+		2D38BA881AD8144700113F96 /* Build configuration list for PBXNativeTarget "Watch Screenshot Magic" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2D38BA891AD8144700113F96 /* Debug */,
