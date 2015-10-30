@@ -13,7 +13,6 @@
 		2D4A7F7F1AD8DE2000AE5445 /* ImageManipulator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D4A7F7C1AD8DE2000AE5445 /* ImageManipulator.swift */; };
 		2D4A7F811AD8DE2F00AE5445 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D4A7F801AD8DE2F00AE5445 /* Images.xcassets */; };
 		2D4A7F841AD8DE3A00AE5445 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D4A7F821AD8DE3A00AE5445 /* MainMenu.xib */; };
-		2D4A7F861AD8DE4000AE5445 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2D4A7F851AD8DE4000AE5445 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -104,7 +103,9 @@
 		2D38BA661AD8144700113F96 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0710;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Trapp Design";
 				TargetAttributes = {
 					2D38BA6D1AD8144700113F96 = {
@@ -137,7 +138,6 @@
 			files = (
 				2D4A7F811AD8DE2F00AE5445 /* Images.xcassets in Resources */,
 				2D4A7F841AD8DE3A00AE5445 /* MainMenu.xib in Resources */,
-				2D4A7F861AD8DE4000AE5445 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +189,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -256,6 +257,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = WatchScreenshotMagic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.trappdesign.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Watch Screenshot Magic";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -269,6 +271,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = WatchScreenshotMagic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.trappdesign.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "Watch Screenshot Magic";
 			};
 			name = Release;

@@ -64,8 +64,8 @@ extension NSImage {
     func chromaKey(color: NSColor) -> NSImage? {
         if let computedColor = color.colorUsingColorSpaceName(NSCalibratedRGBColorSpace) {
             let tiffData = self.TIFFRepresentation
-            let imageSourceRef = CGImageSourceCreateWithData(tiffData, nil)
-            let imageRef = CGImageSourceCreateImageAtIndex(imageSourceRef, 0, nil)
+            let imageSourceRef = CGImageSourceCreateWithData(tiffData!, nil)
+            let imageRef = CGImageSourceCreateImageAtIndex(imageSourceRef!, 0, nil)
 
             let bitsPerComponent = CGImageGetBitsPerComponent(imageRef)
             let maxComponent = CGFloat(1 << bitsPerComponent) - 1
@@ -76,7 +76,7 @@ extension NSImage {
             let colorMask = [redValue, redValue, greenValue, greenValue, blueValue, blueValue]
             let maskedImageRef = CGImageCreateWithMaskingColors(imageRef, colorMask)
 
-            return NSImage(CGImage: maskedImageRef, size: size)
+            return NSImage(CGImage: maskedImageRef!, size: size)
         } else {
             NSException(name: "Invalid Color", reason: "Provided color must be valid in the RGB color space", userInfo: nil).raise()
 
