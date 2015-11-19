@@ -32,10 +32,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         imageView.completion = { [unowned self] image in
             if let image = image {
-                self.userScreenshot = image
-                self.messageLabel.hidden = true
-                self.manipulateImage()
-                self.saveButton.enabled = true
+                if CGSizeEqualToSize(image.size, CGSizeMake(312, 390)) {
+                    self.userScreenshot = image
+                    self.messageLabel.hidden = true
+                    self.manipulateImage()
+                    self.saveButton.enabled = true
+                } else {
+                    self.userScreenshot = nil
+                    self.imageView.image = nil
+                    self.messageLabel.hidden = false
+                    self.saveButton.enabled = false
+                    self.messageLabel.textColor = NSColor.redColor()
+                    self.messageLabel.stringValue = "Screenshot must be 312x390 (48mm)"
+                }
             } else {
                 self.userScreenshot = nil
                 self.imageView.image = nil
