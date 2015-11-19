@@ -62,25 +62,26 @@ class ImageManipulator {
 
 extension NSImage {
     func chromaKey(color: NSColor) -> NSImage? {
-        if let computedColor = color.colorUsingColorSpaceName(NSCalibratedRGBColorSpace) {
-            let tiffData = self.TIFFRepresentation
-            let imageSourceRef = CGImageSourceCreateWithData(tiffData, nil)
-            let imageRef = CGImageSourceCreateImageAtIndex(imageSourceRef, 0, nil)
-
-            let bitsPerComponent = CGImageGetBitsPerComponent(imageRef)
-            let maxComponent = CGFloat(1 << bitsPerComponent) - 1
-            let redValue = CGFloat(computedColor.redComponent * maxComponent)
-            let greenValue = CGFloat(computedColor.greenComponent * maxComponent)
-            let blueValue = CGFloat(computedColor.blueComponent * maxComponent)
-
-            let colorMask = [redValue, redValue, greenValue, greenValue, blueValue, blueValue]
-            let maskedImageRef = CGImageCreateWithMaskingColors(imageRef, colorMask)
-
-            return NSImage(CGImage: maskedImageRef, size: size)
-        } else {
-            NSException(name: "Invalid Color", reason: "Provided color must be valid in the RGB color space", userInfo: nil).raise()
-
+        guard let computedColor = color.colorUsingColorSpaceName(NSCalibratedRGBColorSpace),
+            tiffData = self.TIFFRepresentation,
+            imageSourceRef = CGImageSourceCreateWithData(tiffData, nil) else {
+                fatalError("Provided color must be valid in the RGB color space")
+        }
+        
+        let imageRef = CGImageSourceCreateImageAtIndex(imageSourceRef, 0, nil)
+        
+        let bitsPerComponent = CGImageGetBitsPerComponent(imageRef)
+        let maxComponent = CGFloat(1 << bitsPerComponent) - 1
+        let redValue = CGFloat(computedColor.redComponent * maxComponent)
+        let greenValue = CGFloat(computedColor.greenComponent * maxComponent)
+        let blueValue = CGFloat(computedColor.blueComponent * maxComponent)
+        
+        let colorMask = [redValue, redValue, greenValue, greenValue, blueValue, blueValue]
+        
+        guard let maskedImageRef = CGImageCreateWithMaskingColors(imageRef, colorMask) else {
             return nil
         }
+        
+        return NSImage(CGImage: maskedImageRef, size: size)
     }
 }

@@ -89,7 +89,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 }
 
-enum ScreenshotType: Int, Equatable, Printable {
+enum ScreenshotType: Int, Equatable, CustomStringConvertible {
     case App = 0
     case Glance = 1
     case Notification = 2

@@ -8,7 +8,7 @@
 
 import Cocoa
 
-class DropImageView: NSImageView, NSDraggingDestination {
+class DropImageView: NSImageView {
     var completion: ((image: NSImage?) -> ())?
     private var draggedImage: NSImage?
 
@@ -26,7 +26,7 @@ class DropImageView: NSImageView, NSDraggingDestination {
                 operation = .Copy
             }
         }
-        if let image = sender.draggedImage() {
+        if sender.draggedImage() != nil {
             operation = .Copy
         }
 
@@ -48,10 +48,12 @@ class DropImageView: NSImageView, NSDraggingDestination {
     func isImage(path: String) -> Bool {
         var isImage = false
 
-        let fileUTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, path.pathExtension, nil)
+        guard let fileUTI = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (path as NSString).pathExtension, nil) else {
+            fatalError("Failed to identify if file is image.")
+        }
 
-        if UTTypeConformsTo(fileUTI.takeRetainedValue(), kUTTypeImage) != 0 {
-            isImage = true;
+        if UTTypeConformsTo(fileUTI.takeRetainedValue(), kUTTypeImage) {
+            isImage = true
         }
 
         return isImage
